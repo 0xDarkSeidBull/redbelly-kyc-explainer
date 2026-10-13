@@ -9,7 +9,9 @@ The portal is a web app, so its on-screen text ships inside its public JavaScrip
 | https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js | 4a128d38b556eeae044f703b1aba895f9ec7fa3d7872020c2d6038718d7db357 |
 | https://access.redbelly.network/_next/static/chunks/pages/_app-cee7356aa3975380.js | 6699d0cdb7c326000388f1454596c95cd900a0fab7677fc0a04a283c97548e6a |
 
-## E1. Wallet limit (index file)
+## E1: Wallet limit
+
+Found in the index file.
 
 The Accounts screen hides the "Add another account" button and shows a notice once 10 accounts are linked to one identity:
 
@@ -19,7 +21,9 @@ L.length>=Number("10") ? ... children:"Account allocation exhausted."
 
 The same screen shows the heading "Accounts", the line "Manage your Redbelly Network Accounts", and the buttons "Add another account" and "Link another wallet".
 
-## E2. Approval time and outcomes (_app file)
+## E2: Approval time and outcomes
+
+Found in the _app file.
 
 ```
 PENDING = "Your identity is being verified by the accredited issuer. This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon."
@@ -29,10 +33,12 @@ RETRY   = "The issuer, Averer, is not yet able to verify your identity. You may 
 
 Screen headings for these states (index file): "Identity verification pending", "Identity verification incomplete", "Identity verification failed". Buttons: "Check verification status", "Retry identity verification", "CONTACT AVERER".
 
-## E3. Step by step screens (index file)
+## E3: Step by step screens
+
+Found in the index file.
 
 1. "Get started", "Connect your wallet to the Redbelly Network.", button "Connect wallet", link "ADD NETWORK MANUALLY". Note under it: "Note: the account(s) you use to connect will become your public address(es) on Redbelly Network."
-2. "Get access credential", button "Begin identity verification".
+2. "Get access credential", button "Begin identity verification". Small print under it: "Identity verification is provided by accredited issuer(s) on the network, who will issue Redbelly Network Access Credentials and provide accounts with the funds required to enable them with network access."
 3. "Important information regarding identity verification": "The identity verification process will be managed by Averer, an accredited issuer on Redbelly Network." "To prove your identity, you must provide Averer with some documentation, such as a passport. This data is not shared with, nor stored on, Redbelly Network." Checkbox "I understand", button "Continue with Averer".
 4. "We need you to allow the accredited issuer to access your public address." "Please check your wallet to sign the transaction allowing the accredited issuer to access your public address."
 5. Window titled "Interacting with averer.co".
@@ -41,13 +47,17 @@ Screen headings for these states (index file): "Identity verification pending", 
 8. If the account has no funds and none are on the way: "To pay the transaction fee required to enable this account, this account must first be funded with at least [amount] USD worth RBNT coins. You can transfer from another account or, review information on getting RBNT coins."
 9. After access: "Next steps", "Now that you have access to Redbelly Network, you can start to interact:".
 
-## E4. Adding wallets (index file)
+## E4: Adding wallets
+
+Found in the index file.
 
 - "Add another account": "To add another account, use your wallet to switch the connection to this site with the account which you want to access Redbelly with." Wallet prompt: "Check your wallet to sign the transaction to link this account to your verified identity."
 - "Link another wallet": "To link another wallet to your verified identity, you must use the Dynamic widget in the top right corner of the dApp to connect the additional wallet." "By linking another wallet, you will be accountable for all the actions taken by that wallet on the network."
 - Error: "The address you're trying to add is attached to another account."
 
-## E5. Portal FAQ, "Having trouble?" (_app file)
+## E5: Portal FAQ
+
+The "Having trouble?" section, found in the _app file.
 
 - "Do I need to pay for access?" "No, the accredited issuer that verifies your identity will cover any associated fees required to grant your network access."
 - "Which wallets can I use to gain access to Redbelly Network?" "MetaMask and Coinbase Wallet can be used to get access."

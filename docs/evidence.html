@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence: Redbelly Access portal text</title>
+<link rel="icon" href="img/dao-logo-on-light.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .evidence-body h1 { font-size: 30px; line-height: 1.2; margin: 40px 0 12px; }
+  .evidence-body h2 { font-size: 21px; margin: 36px 0 8px; scroll-margin-top: 16px; }
+  .evidence-body h2:target { color: var(--accent-text); }
+  .evidence-body table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+  .evidence-body th, .evidence-body td { text-align: left; padding: 8px; border-top: 1px solid var(--hairline); vertical-align: top; overflow-wrap: anywhere; }
+  .evidence-body pre { background: var(--well); border: 1px solid var(--card-edge); border-radius: 8px; padding: 12px; overflow-x: auto; white-space: pre-wrap; overflow-wrap: break-word; }
+  .evidence-body pre code { background: none; border: 0; padding: 0; }
+  .evidence-body li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="label-caps">Redbelly DAO community guide</span>
+    <p style="margin:8px 0 0"><a href="index.html#evidence">Back to the KYC and Wallet Activation Explainer</a></p>
+  </div>
+</header>
+<main class="wrap evidence-body">
+<h1 id="redbelly-access-portal-text-quoted-in-the-guide">Redbelly Access
+portal: text quoted in the guide</h1>
+<p>Checked on 13 October 2026 at <a
+href="https://access.redbelly.network/">https://access.redbelly.network/</a></p>
+<p>The portal is a web app, so its on-screen text ships inside its
+public JavaScript files. Anyone can open these files in a browser and
+search for the quotes below. The file names change when Redbelly
+releases a new version of the portal. If a link stops working, open the
+portal, then search the files listed under the browser's developer
+tools, Sources tab.</p>
+<table>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>SHA-256 on 13 October 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a
+href="https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js">https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js</a></td>
+<td>4a128d38b556eeae044f703b1aba895f9ec7fa3d7872020c2d6038718d7db357</td>
+</tr>
+<tr class="even">
+<td><a
+href="https://access.redbelly.network/_next/static/chunks/pages/_app-cee7356aa3975380.js">https://access.redbelly.network/_next/static/chunks/pages/_app-cee7356aa3975380.js</a></td>
+<td>6699d0cdb7c326000388f1454596c95cd900a0fab7677fc0a04a283c97548e6a</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e1-wallet-limit">E1: Wallet limit</h2>
+<p>Found in the index file.</p>
+<p>The Accounts screen hides the "Add another account" button and shows
+a notice once 10 accounts are linked to one identity:</p>
+<pre><code>L.length&gt;=Number(&quot;10&quot;) ? ... children:&quot;Account allocation exhausted.&quot;</code></pre>
+<p>The same screen shows the heading "Accounts", the line "Manage your
+Redbelly Network Accounts", and the buttons "Add another account" and
+"Link another wallet".</p>
+<h2 id="e2-approval-time-and-outcomes">E2: Approval time and
+outcomes</h2>
+<p>Found in the _app file.</p>
+<pre><code>PENDING = &quot;Your identity is being verified by the accredited issuer. This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon.&quot;
+FAIL    = &quot;The issuer, Averer, was not able to verify your identity. You may need to reach out to Averer directly.&quot;
+RETRY   = &quot;The issuer, Averer, is not yet able to verify your identity. You may need to resubmit some information. If you continue having trouble however, you may need to reach out to Averer directly.&quot;</code></pre>
+<p>Screen headings for these states (index file): "Identity verification
+pending", "Identity verification incomplete", "Identity verification
+failed". Buttons: "Check verification status", "Retry identity
+verification", "CONTACT AVERER".</p>
+<h2 id="e3-step-by-step-screens">E3: Step by step screens</h2>
+<p>Found in the index file.</p>
+<ol type="1">
+<li>"Get started", "Connect your wallet to the Redbelly Network.",
+button "Connect wallet", link "ADD NETWORK MANUALLY". Note under it:
+"Note: the account(s) you use to connect will become your public
+address(es) on Redbelly Network."</li>
+<li>"Get access credential", button "Begin identity verification". Small
+print under it: "Identity verification is provided by accredited
+issuer(s) on the network, who will issue Redbelly Network Access
+Credentials and provide accounts with the funds required to enable them
+with network access."</li>
+<li>"Important information regarding identity verification": "The
+identity verification process will be managed by Averer, an accredited
+issuer on Redbelly Network." "To prove your identity, you must provide
+Averer with some documentation, such as a passport. This data is not
+shared with, nor stored on, Redbelly Network." Checkbox "I understand",
+button "Continue with Averer".</li>
+<li>"We need you to allow the accredited issuer to access your public
+address." "Please check your wallet to sign the transaction allowing the
+accredited issuer to access your public address."</li>
+<li>Window titled "Interacting with averer.co".</li>
+<li>Account panel: "Account status: Not enabled" or "Enabled", button
+"Enable account", "Check your wallet to sign the transaction that will
+enable your account."</li>
+<li>If funds have not arrived: "It seems you haven't received the RBNT
+yet, which you will need to enable you account. Please wait a few
+minutes and try again." Button "RETRY".</li>
+<li>If the account has no funds and none are on the way: "To pay the
+transaction fee required to enable this account, this account must first
+be funded with at least [amount] USD worth RBNT coins. You can transfer
+from another account or, review information on getting RBNT coins."</li>
+<li>After access: "Next steps", "Now that you have access to Redbelly
+Network, you can start to interact:".</li>
+</ol>
+<h2 id="e4-adding-wallets">E4: Adding wallets</h2>
+<p>Found in the index file.</p>
+<ul>
+<li>"Add another account": "To add another account, use your wallet to
+switch the connection to this site with the account which you want to
+access Redbelly with." Wallet prompt: "Check your wallet to sign the
+transaction to link this account to your verified identity."</li>
+<li>"Link another wallet": "To link another wallet to your verified
+identity, you must use the Dynamic widget in the top right corner of the
+dApp to connect the additional wallet." "By linking another wallet, you
+will be accountable for all the actions taken by that wallet on the
+network."</li>
+<li>Error: "The address you're trying to add is attached to another
+account."</li>
+</ul>
+<h2 id="e5-portal-faq">E5: Portal FAQ</h2>
+<p>The "Having trouble?" section, found in the _app file.</p>
+<ul>
+<li>"Do I need to pay for access?" "No, the accredited issuer that
+verifies your identity will cover any associated fees required to grant
+your network access."</li>
+<li>"Which wallets can I use to gain access to Redbelly Network?"
+"MetaMask and Coinbase Wallet can be used to get access."</li>
+<li>"Can I get access to Redbelly Network for multiple accounts?" "Yes,
+once you have completed the process of identity verification and
+enabling your first account, you will be offered the option to add more
+accounts which will be connected to your identity."</li>
+<li>"Who will verify my identity?" "Your identity will be verified by an
+accredited issuer, Averer."</li>
+<li>"Need some extra support?" Identity verification problems: "contact
+Averer" (links to <a
+href="https://www.averer.co/">https://www.averer.co/</a>). Connection or
+account errors: "Redbelly Support" (links to <a
+href="https://vine.redbelly.network/support">https://vine.redbelly.network/support</a>).</li>
+</ul>
+</main>
+</body>
+</html>

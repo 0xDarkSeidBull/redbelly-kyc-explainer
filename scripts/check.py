@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TEXT_FILES = [
     ROOT / "docs" / "index.html",
     ROOT / "docs" / "pin.txt",
+    ROOT / "docs" / "evidence.html",
     ROOT / "docs" / "style.css",
     ROOT / "README.md",
     *sorted((ROOT / "evidence").glob("*.md")),

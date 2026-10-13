@@ -1,12 +1,14 @@
 // Builds every deliverable from docs/index.html so the wording can never drift:
 //   docs/KYC-and-Wallet-Activation-Explainer.pdf  (the full guide, Parts A to D plus sources)
 //   docs/img/decision-guide.png                   (Part A as a standalone 1080 x 1080 image)
+//   docs/evidence.html                            (the saved portal quotes, built from evidence/access-portal-text.md)
 // Usage: node scripts/build.mjs   (needs the playwright package and a Chromium build)
 import { createServer } from "node:http";
 import { readFile, mkdir } from "node:fs/promises";
 import { extname, join, normalize, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { execFileSync } from "node:child_process";
 
 const require = createRequire(import.meta.url);
 let chromium;
@@ -28,6 +30,15 @@ const server = createServer(async (req, res) => {
 });
 await new Promise((r) => server.listen(0, "127.0.0.1", r));
 const base = `http://127.0.0.1:${server.address().port}/`;
+
+// 0. Evidence page, so the guide can link to each saved portal quote on the same site
+execFileSync("pandoc", [
+  join(root, "evidence", "access-portal-text.md"),
+  "--from", "gfm", "--to", "html5", "--standalone",
+  "--template", join(root, "scripts", "evidence-template.html"),
+  "--metadata", "title=Evidence: Redbelly Access portal text",
+  "--output", join(siteDir, "evidence.html"),
+]);
 
 const browser = await chromium.launch();
 await mkdir(distDir, { recursive: true });

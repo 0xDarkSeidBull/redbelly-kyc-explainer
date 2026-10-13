@@ -15,7 +15,7 @@
 <body>
 
 <header class="hero">
-  <div class="wrap">
+  <div class="wrap wide">
     <div class="hero-top">
       <img src="img/dao-logo-on-dark.png" alt="Redbelly DAO">
       <span class="label-caps">Documentation</span>
@@ -33,8 +33,10 @@
   </div>
 </header>
 
+<div class="page">
 <nav class="toc" aria-label="Contents">
-  <div class="wrap">
+  <div>
+    <span class="label-caps toc-title">On this page</span>
     <ul>
       <li><a href="#part-a">A. Do I need KYC</a></li>
       <li><a href="#part-b">B. Five common questions</a></li>
@@ -46,7 +48,7 @@
   </div>
 </nav>
 
-<main class="wrap">
+<main class="content">
 
 <!-- ============================ PART A ============================ -->
 <section id="part-a">
@@ -97,7 +99,7 @@
     <span class="status needed">NEEDED</span><span>verify and enable your wallet first</span>
     <span class="status not-needed">NOT NEEDED</span><span>no Redbelly KYC involved</span>
   </div>
-  <p class="note">Every situation on this list has an official answer, so nothing here is marked unconfirmed. One detail is not published: whether a bridge will deliver coins to a Redbelly wallet that is not enabled yet. That does not change the answer. You still need KYC to use the coins, so verify before you bridge.</p>
+  <p class="note"><span class="status unconfirmed">UNCONFIRMED DETAIL</span><br>Bridging onto Redbelly: Redbelly does not say whether a bridge can deliver coins to a wallet that has not been enabled yet. The answer above stays the same either way, because you need an enabled wallet to move the coins once they arrive. Verify and enable your wallet first, then bridge.</p>
   <p class="no-print">This table is also available as an image for sharing: <a href="img/decision-guide.png">decision-guide.png</a>.</p>
 </section>
 
@@ -131,13 +133,13 @@
     <div class="card">
       <span class="who">Redbelly Network</span>
       <h4>Not offered in 18 jurisdictions</h4>
-      <p>Clause 15.1 of Redbelly's terms lists places where Redbelly does not offer services.<sup class="src"><a href="#s11">S11</a></sup> People who are tax residents of, or located in, these places are not allowed to access or use Redbelly's website, platform, software and tools.<sup class="src"><a href="#s11">S11</a></sup></p>
+      <p>Clause 15.1 of Redbelly's terms lists places where Redbelly does not offer services.<sup class="src"><a href="#s11">S11</a></sup> Clause 15.2 says people who are tax residents of, or located in, these places are not allowed to access or use Redbelly's website, platform, software and tools.<sup class="src"><a href="#s11">S11</a></sup></p>
       <ul class="countries">
         <li>Afghanistan</li><li>Central African Republic</li><li>North Korea</li><li>Democratic Republic of the Congo</li><li>Guinea-Bissau</li><li>Iran</li><li>Iraq</li><li>Lebanon</li><li>Libya</li><li>Myanmar</li><li>Russia</li><li>Somalia</li><li>South Sudan</li><li>Sudan</li><li>Syria</li><li>Ukraine</li><li>Yemen</li><li>Zimbabwe</li>
       </ul>
     </div>
   </div>
-  <p>The DAO vote changed the DAO's own membership rule. It did not change Redbelly Network's terms. The clause 15 list still applies to Redbelly's website and platform, and Redbelly Access is part of that website.</p>
+  <p>The DAO vote changed the DAO's own membership rule. It did not change Redbelly Network's terms. Clauses 15.1 and 15.2 still apply to Redbelly's website and platform, and Redbelly Access is part of that website.</p>
 
   <h3 id="q5">5. Do I need KYC to stake?</h3>
   <p class="answer">Yes. Staking happens on Redbelly mainnet, and only verified, enabled wallets can send transactions there.</p>
@@ -239,7 +241,7 @@
 <section id="sources" class="page-break">
   <span class="label-caps part-tag">Sources</span>
   <h2>Where every fact comes from</h2>
-  <p class="lead">All pages checked on 13 October 2026. S numbers are official pages. E numbers are exact quotes from the Redbelly Access portal, saved in the <code>evidence</code> folder of this guide's repository so they can be checked if the portal changes.</p>
+  <p class="lead">All pages checked on 13 October 2026. S numbers are official pages. E numbers are exact quotes from the Redbelly Access portal, listed <a href="#evidence">below</a> with a link to each saved quote.</p>
   <ul class="sources">
     <li id="s1"><span class="id">S1</span>Redbelly Developer Portal, User access<span class="url"><a href="https://vine.redbelly.network/identity/user-access/">https://vine.redbelly.network/identity/user-access/</a></span><span class="backs">Every user must claim an access credential before getting write access. The credential needs a photo identity document (passport) verified with biometric checks.</span></li>
     <li id="s2"><span class="id">S2</span>Redbelly Developer Portal, Accredited issuers<span class="url"><a href="https://vine.redbelly.network/identity/accredited-issuers/">https://vine.redbelly.network/identity/accredited-issuers/</a></span><span class="backs">All network participants must prove who they are to get network access, through an accredited issuer.</span></li>
@@ -251,7 +253,7 @@
     <li id="s8"><span class="id">S8</span>Redbelly Developer Portal, Bridged tokens: Lucid Labs<span class="url"><a href="https://vine.redbelly.network/bridged-tokens/lucidlabs/">https://vine.redbelly.network/bridged-tokens/lucidlabs/</a></span><span class="backs">Tokens that can be bridged between Redbelly and other chains, in both directions.</span></li>
     <li id="s9"><span class="id">S9</span>Redbelly Developer Portal, Staking<span class="url"><a href="https://vine.redbelly.network/nodes/staking/">https://vine.redbelly.network/nodes/staking/</a></span><span class="backs">Nodes stake 100,000 RBNT by calling <code>deposit</code> on the staking contract on mainnet.</span></li>
     <li id="s10"><span class="id">S10</span>Redbelly Developer Portal, Becoming a node operator<span class="url"><a href="https://vine.redbelly.network/nodes/become-operator/">https://vine.redbelly.network/nodes/become-operator/</a></span><span class="backs">"Node operators MUST have network access for 2 accounts."</span></li>
-    <li id="s11"><span class="id">S11</span>Redbelly Network Terms and Conditions, clause 15<span class="url"><a href="https://redbelly.network/terms-and-conditions">https://redbelly.network/terms-and-conditions</a></span><span class="backs">The 18 jurisdictions where Redbelly does not offer services (15.1), and that tax residents of or people located in them may not access or use the website, platform, software suite and tools.</span></li>
+    <li id="s11"><span class="id">S11</span>Redbelly Network Terms and Conditions, clauses 15.1 and 15.2<span class="url"><a href="https://redbelly.network/terms-and-conditions">https://redbelly.network/terms-and-conditions</a></span><span class="backs">15.1: the 18 jurisdictions where Redbelly does not offer services. 15.2: tax residents of, or people located in, those jurisdictions may not access or use the website, platform, software suite and tools.</span></li>
     <li id="s12"><span class="id">S12</span>Redbelly DAO vote: Increase Governance Accessibility and Protect Contributor Privacy<span class="url"><a href="https://snapshot.box/#/s:rbnt.eth/proposal/0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02">https://snapshot.box/#/s:rbnt.eth/proposal/0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02</a></span><span class="url"><a href="https://redbelly-governance.vercel.app/proposal/9e19c1c0-e981-4f8a-8d8a-0c8be619a36f">https://redbelly-governance.vercel.app/proposal/9e19c1c0-e981-4f8a-8d8a-0c8be619a36f</a></span><span class="backs">Removes geographic restrictions for general DAO members and keeps them for High Council members and DAO leadership. Closed 5 July 2026. Result: For 8,514,893, Against 5,983,785, Abstain 1,340,338.</span></li>
     <li id="s13"><span class="id">S13</span>Redbelly DAO governance site<span class="url"><a href="https://redbelly-governance.vercel.app/">https://redbelly-governance.vercel.app/</a></span><span class="backs">"Complete KYC to participate in DAO voting." Voting wallets must be verified and enabled at access.redbelly.network.</span></li>
     <li id="s14"><span class="id">S14</span>Averer support portal<span class="url"><a href="https://averer-help.freshdesk.com/support/home">https://averer-help.freshdesk.com/support/home</a></span><span class="backs">Averer's help centre and ticket system. Its public knowledge base had no articles on 13 October 2026.</span></li>
@@ -259,11 +261,15 @@
     <li id="s16"><span class="id">S16</span>Averer website<span class="url"><a href="https://www.averer.co/">https://www.averer.co/</a></span><span class="backs">The "Contact support" link on averer.co goes to the support portal in S14.</span></li>
     <li id="s17"><span class="id">S17</span>Redbelly Developer Portal, Environments<span class="url"><a href="https://vine.redbelly.network/environments/">https://vine.redbelly.network/environments/</a></span><span class="backs">Mainnet network name, RPC URL, chain ID 151, RBNT symbol and block explorer.</span></li>
     <li id="s18"><span class="id">S18</span>Redbelly Developer Portal, Support<span class="url"><a href="https://vine.redbelly.network/support/">https://vine.redbelly.network/support/</a></span><span class="backs">Redbelly's support page, linked from the portal for connection and account errors.</span></li>
-    <li id="e1"><span class="id">E1</span>Redbelly Access portal, Accounts screen: wallet limit<span class="backs">At 10 linked accounts the portal shows "Account allocation exhausted." and hides "Add another account". Saved in evidence/access-portal-text.md.</span></li>
-    <li id="e2"><span class="id">E2</span>Redbelly Access portal, verification status messages<span class="backs">Pending: "This could take a few minutes but in some (rare) cases it could take a few days." Failed and incomplete messages. Saved in evidence/access-portal-text.md.</span></li>
-    <li id="e3"><span class="id">E3</span>Redbelly Access portal, verification and enable screens<span class="backs">Screen titles, buttons and wallet prompts from connecting a wallet to "Account status: Enabled". Saved in evidence/access-portal-text.md.</span></li>
-    <li id="e4"><span class="id">E4</span>Redbelly Access portal, adding wallets<span class="backs">"Add another account" and "Link another wallet" instructions, accountability notice and the "attached to another account" error. Saved in evidence/access-portal-text.md.</span></li>
-    <li id="e5"><span class="id">E5</span>Redbelly Access portal, "Having trouble?" FAQ<span class="backs">Identity problems go to Averer. Connection or account errors go to Redbelly Support. Saved in evidence/access-portal-text.md.</span></li>
+  </ul>
+  <h3 id="evidence">Evidence from the Redbelly Access portal</h3>
+  <p>The portal is an app, so its screens are not a normal web page you can link to. E1 to E5 are the exact on-screen text, copied from the portal's public files on 13 October 2026 with file names and checksums. Open any entry to see the quote.</p>
+  <ul class="sources">
+    <li id="e1"><span class="id">E1</span>Redbelly Access portal, Accounts screen: wallet limit<span class="backs">At 10 linked accounts the portal shows "Account allocation exhausted." and hides "Add another account".</span><span class="url"><a href="https://kyc.test-hub.xyz/evidence.html#e1-wallet-limit">Saved quote E1</a></span></li>
+    <li id="e2"><span class="id">E2</span>Redbelly Access portal, verification status messages<span class="backs">Pending: "This could take a few minutes but in some (rare) cases it could take a few days." Failed and incomplete messages.</span><span class="url"><a href="https://kyc.test-hub.xyz/evidence.html#e2-approval-time-and-outcomes">Saved quote E2</a></span></li>
+    <li id="e3"><span class="id">E3</span>Redbelly Access portal, verification and enable screens<span class="backs">Screen titles, buttons and wallet prompts from connecting a wallet to "Account status: Enabled".</span><span class="url"><a href="https://kyc.test-hub.xyz/evidence.html#e3-step-by-step-screens">Saved quote E3</a></span></li>
+    <li id="e4"><span class="id">E4</span>Redbelly Access portal, adding wallets<span class="backs">"Add another account" and "Link another wallet" instructions, accountability notice and the "attached to another account" error.</span><span class="url"><a href="https://kyc.test-hub.xyz/evidence.html#e4-adding-wallets">Saved quote E4</a></span></li>
+    <li id="e5"><span class="id">E5</span>Redbelly Access portal, "Having trouble?" FAQ<span class="backs">Identity problems go to Averer. Connection or account errors go to Redbelly Support.</span><span class="url"><a href="https://kyc.test-hub.xyz/evidence.html#e5-portal-faq">Saved quote E5</a></span></li>
   </ul>
 </section>
 
@@ -276,14 +282,44 @@
 </section>
 
 </main>
+</div>
 
 <footer>
-  <div class="wrap">
+  <div class="wrap wide">
     Redbelly DAO community documentation. Last verified 13 October 2026. Facts that change, such as the wallet limit or the restricted list, should be checked against the sources above before you rely on them.
   </div>
 </footer>
 
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+</button>
+
 <script>
+  // Back to top: appears after 200px of scrolling, same as redbellydao.network.
+  (function () {
+    var btn = document.querySelector(".to-top");
+    function update() { btn.classList.toggle("show", window.scrollY > 200); }
+    window.addEventListener("scroll", update, { passive: true });
+    btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    update();
+  })();
+
+  // Highlight the section you are reading in the contents list.
+  (function () {
+    if (!("IntersectionObserver" in window)) return;
+    var links = {};
+    document.querySelectorAll("nav.toc a").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && links[e.target.id]) {
+          Object.keys(links).forEach(function (k) { links[k].classList.remove("active"); });
+          links[e.target.id].classList.add("active");
+        }
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    Object.keys(links).forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
+  })();
+
   // The pin text lives in pin.txt so the page and the posted text never drift apart.
   fetch("pin.txt").then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
     if (t) document.getElementById("pin-text").textContent = t;
