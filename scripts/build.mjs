@@ -47,7 +47,7 @@ await mkdir(distDir, { recursive: true });
     headerTemplate: "<span></span>",
     footerTemplate:
       '<div style="width:100%;font-family:monospace;font-size:8px;color:#4E606C;padding:0 16mm;display:flex;justify-content:space-between;">' +
-      "<span>KYC AND WALLET ACTIVATION EXPLAINER</span><span>LAST VERIFIED 13 OCT 2026</span>" +
+      "<span>KYC AND WALLET ACTIVATION EXPLAINER</span><span>KYC.TEST-HUB.XYZ</span><span>LAST VERIFIED 13 OCT 2026</span>" +
       '<span>PAGE <span class="pageNumber"></span> OF <span class="totalPages"></span></span></div>',
   });
   await page.close();

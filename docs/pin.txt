@@ -9,5 +9,5 @@ Wallets: up to 10 per verified identity.
 Region: the DAO is open to every region. Redbelly Network does not offer services in the 18 jurisdictions in clause 15.1 of its terms.
 Stuck or rejected: open a ticket at averer-help.freshdesk.com/support/tickets/new
 
-Full guide with sources: [GUIDE LINK]
+Full guide with sources: https://kyc.test-hub.xyz
 Last verified 13 Oct 2026

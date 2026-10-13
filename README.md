@@ -8,7 +8,7 @@ Last verified: 13 October 2026.
 
 | # | Deliverable | File |
 |---|---|---|
-| 1 | The guide, Parts A to D | Web page: `docs/index.html` (published with GitHub Pages). PDF: `docs/KYC-and-Wallet-Activation-Explainer.pdf` |
+| 1 | The guide, Parts A to D | Live at https://kyc.test-hub.xyz. Web page: `docs/index.html` (published with GitHub Pages). PDF: `docs/KYC-and-Wallet-Activation-Explainer.pdf` |
 | 2 | Part A decision guide as an image | `docs/img/decision-guide.png` (1080 x 1080 PNG) |
 | 3 | Short version for pinning in Discord or Telegram | `docs/pin.txt`, posted together with the image above |
 | 4 | Source list with a link for every fact | The "Sources" section of the guide (S1 to S18, E1 to E5), plus `evidence/` |
