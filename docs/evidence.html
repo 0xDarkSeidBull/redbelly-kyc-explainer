@@ -15,6 +15,7 @@
   .evidence-body pre { background: var(--well); border: 1px solid var(--card-edge); border-radius: 8px; padding: 12px; overflow-x: auto; white-space: pre-wrap; overflow-wrap: break-word; }
   .evidence-body pre code { background: none; border: 0; padding: 0; }
   .evidence-body li { margin-bottom: 6px; }
+  html { scroll-behavior: smooth; }
 </style>
 </head>
 <body>
@@ -32,9 +33,26 @@ href="https://access.redbelly.network/">https://access.redbelly.network/</a></p>
 <p>The portal is a web app, so its on-screen text ships inside its
 public JavaScript files. Anyone can open these files in a browser and
 search for the quotes below. The file names change when Redbelly
-releases a new version of the portal. If a link stops working, open the
-portal, then search the files listed under the browser's developer
-tools, Sources tab.</p>
+releases a new version of the portal. If a link stops working, use the
+steps below. They search whatever version is live.</p>
+<h2 id="how-to-check-a-quote-yourself">How to check a quote
+yourself</h2>
+<ol type="1">
+<li>Open <a
+href="https://access.redbelly.network/">https://access.redbelly.network/</a>
+in Chrome or Edge on a computer.</li>
+<li>Press F12 to open developer tools, then open the
+<strong>Sources</strong> tab.</li>
+<li>Press <strong>Ctrl+Shift+F</strong> (Cmd+Option+F on Mac). This
+searches every file the portal loaded.</li>
+<li>Type the text in a <strong>Search for</strong> line below, exactly
+as written, and press Enter.</li>
+<li>Click a result to see the line in the portal's code. Press the
+<code>{}</code> button at the bottom of the code panel to make it
+readable.</li>
+</ol>
+<p>Search for the portal's own words, not this page's descriptions. The
+text in quotation marks is what the portal shows on screen.</p>
 <table>
 <thead>
 <tr class="header">
@@ -57,15 +75,22 @@ href="https://access.redbelly.network/_next/static/chunks/pages/_app-cee7356aa39
 </table>
 <h2 id="e1-wallet-limit">E1: Wallet limit</h2>
 <p>Found in the index file.</p>
+<p><strong>Search for:</strong>
+<code>Account allocation exhausted</code></p>
 <p>The Accounts screen hides the "Add another account" button and shows
-a notice once 10 accounts are linked to one identity:</p>
+a notice once 10 accounts are linked to one identity. The code reads
+like this (the letter before <code>.length</code> can differ between
+versions):</p>
 <pre><code>L.length&gt;=Number(&quot;10&quot;) ? ... children:&quot;Account allocation exhausted.&quot;</code></pre>
+<p>With <code>{}</code> formatting on, it appears as
+<code>L.length &gt;= Number("10") ? (0, i.jsx)(d.A, {severity: "info", children: "Account allocation exhausted."})</code>.</p>
 <p>The same screen shows the heading "Accounts", the line "Manage your
 Redbelly Network Accounts", and the buttons "Add another account" and
 "Link another wallet".</p>
 <h2 id="e2-approval-time-and-outcomes">E2: Approval time and
 outcomes</h2>
 <p>Found in the _app file.</p>
+<p><strong>Search for:</strong> <code>could take a few days</code></p>
 <pre><code>PENDING = &quot;Your identity is being verified by the accredited issuer. This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon.&quot;
 FAIL    = &quot;The issuer, Averer, was not able to verify your identity. You may need to reach out to Averer directly.&quot;
 RETRY   = &quot;The issuer, Averer, is not yet able to verify your identity. You may need to resubmit some information. If you continue having trouble however, you may need to reach out to Averer directly.&quot;</code></pre>
@@ -75,6 +100,10 @@ failed". Buttons: "Check verification status", "Retry identity
 verification", "CONTACT AVERER".</p>
 <h2 id="e3-step-by-step-screens">E3: Step by step screens</h2>
 <p>Found in the index file.</p>
+<p><strong>Search for:</strong>
+<code>Begin identity verification</code>,
+<code>Continue with Averer</code>, <code>Enable account</code>,
+<code>provide accounts with the funds</code></p>
 <ol type="1">
 <li>"Get started", "Connect your wallet to the Redbelly Network.",
 button "Connect wallet", link "ADD NETWORK MANUALLY". Note under it:
@@ -110,6 +139,8 @@ Network, you can start to interact:".</li>
 </ol>
 <h2 id="e4-adding-wallets">E4: Adding wallets</h2>
 <p>Found in the index file.</p>
+<p><strong>Search for:</strong> <code>Link another wallet</code>,
+<code>attached to another account</code></p>
 <ul>
 <li>"Add another account": "To add another account, use your wallet to
 switch the connection to this site with the account which you want to
@@ -124,7 +155,11 @@ network."</li>
 account."</li>
 </ul>
 <h2 id="e5-portal-faq">E5: Portal FAQ</h2>
-<p>The "Having trouble?" section, found in the _app file.</p>
+<p>The "Having trouble?" section, found in the _app file. It is also
+visible on the portal's home page without connecting a wallet.</p>
+<p><strong>Search for:</strong>
+<code>Do I need to pay for access</code>,
+<code>MetaMask and Coinbase Wallet</code></p>
 <ul>
 <li>"Do I need to pay for access?" "No, the accredited issuer that
 verifies your identity will cover any associated fees required to grant

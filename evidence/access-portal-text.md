@@ -2,7 +2,17 @@
 
 Checked on 13 October 2026 at https://access.redbelly.network/
 
-The portal is a web app, so its on-screen text ships inside its public JavaScript files. Anyone can open these files in a browser and search for the quotes below. The file names change when Redbelly releases a new version of the portal. If a link stops working, open the portal, then search the files listed under the browser's developer tools, Sources tab.
+The portal is a web app, so its on-screen text ships inside its public JavaScript files. Anyone can open these files in a browser and search for the quotes below. The file names change when Redbelly releases a new version of the portal. If a link stops working, use the steps below. They search whatever version is live.
+
+## How to check a quote yourself
+
+1. Open https://access.redbelly.network/ in Chrome or Edge on a computer.
+2. Press F12 to open developer tools, then open the **Sources** tab.
+3. Press **Ctrl+Shift+F** (Cmd+Option+F on Mac). This searches every file the portal loaded.
+4. Type the text in a **Search for** line below, exactly as written, and press Enter.
+5. Click a result to see the line in the portal's code. Press the `{}` button at the bottom of the code panel to make it readable.
+
+Search for the portal's own words, not this page's descriptions. The text in quotation marks is what the portal shows on screen.
 
 | File | SHA-256 on 13 October 2026 |
 |---|---|
@@ -13,17 +23,23 @@ The portal is a web app, so its on-screen text ships inside its public JavaScrip
 
 Found in the index file.
 
-The Accounts screen hides the "Add another account" button and shows a notice once 10 accounts are linked to one identity:
+**Search for:** `Account allocation exhausted`
+
+The Accounts screen hides the "Add another account" button and shows a notice once 10 accounts are linked to one identity. The code reads like this (the letter before `.length` can differ between versions):
 
 ```
 L.length>=Number("10") ? ... children:"Account allocation exhausted."
 ```
+
+With `{}` formatting on, it appears as `L.length >= Number("10") ? (0, i.jsx)(d.A, {severity: "info", children: "Account allocation exhausted."})`.
 
 The same screen shows the heading "Accounts", the line "Manage your Redbelly Network Accounts", and the buttons "Add another account" and "Link another wallet".
 
 ## E2: Approval time and outcomes
 
 Found in the _app file.
+
+**Search for:** `could take a few days`
 
 ```
 PENDING = "Your identity is being verified by the accredited issuer. This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon."
@@ -36,6 +52,8 @@ Screen headings for these states (index file): "Identity verification pending", 
 ## E3: Step by step screens
 
 Found in the index file.
+
+**Search for:** `Begin identity verification`, `Continue with Averer`, `Enable account`, `provide accounts with the funds`
 
 1. "Get started", "Connect your wallet to the Redbelly Network.", button "Connect wallet", link "ADD NETWORK MANUALLY". Note under it: "Note: the account(s) you use to connect will become your public address(es) on Redbelly Network."
 2. "Get access credential", button "Begin identity verification". Small print under it: "Identity verification is provided by accredited issuer(s) on the network, who will issue Redbelly Network Access Credentials and provide accounts with the funds required to enable them with network access."
@@ -51,13 +69,17 @@ Found in the index file.
 
 Found in the index file.
 
+**Search for:** `Link another wallet`, `attached to another account`
+
 - "Add another account": "To add another account, use your wallet to switch the connection to this site with the account which you want to access Redbelly with." Wallet prompt: "Check your wallet to sign the transaction to link this account to your verified identity."
 - "Link another wallet": "To link another wallet to your verified identity, you must use the Dynamic widget in the top right corner of the dApp to connect the additional wallet." "By linking another wallet, you will be accountable for all the actions taken by that wallet on the network."
 - Error: "The address you're trying to add is attached to another account."
 
 ## E5: Portal FAQ
 
-The "Having trouble?" section, found in the _app file.
+The "Having trouble?" section, found in the _app file. It is also visible on the portal's home page without connecting a wallet.
+
+**Search for:** `Do I need to pay for access`, `MetaMask and Coinbase Wallet`
 
 - "Do I need to pay for access?" "No, the accredited issuer that verifies your identity will cover any associated fees required to grant your network access."
 - "Which wallets can I use to gain access to Redbelly Network?" "MetaMask and Coinbase Wallet can be used to get access."
