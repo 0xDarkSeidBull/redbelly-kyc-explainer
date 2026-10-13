@@ -1,0 +1,26 @@
+{
+  "data": {
+    "proposal": {
+      "id": "0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02",
+      "title": "DAO Proposal: Increase Governance Accessibility and Protect Contributor Privacy",
+      "state": "closed",
+      "choices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "scores": [
+        8514892.529742181,
+        5983785.4650494745,
+        1340338.0139256837
+      ],
+      "scores_total": 15839016.008717343,
+      "start": 1782816256,
+      "end": 1783248120,
+      "space": {
+        "id": "rbnt.eth",
+        "name": "Redbelly Network"
+      }
+    }
+  }
+}
